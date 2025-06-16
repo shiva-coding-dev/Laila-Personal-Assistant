@@ -6,6 +6,7 @@ import musicLibrary
 import apps
 from groq import Groq
 import sys
+from dotenv import load_dotenv
 import os
 conversation_history = []
 recognizer = sr.Recognizer()
@@ -13,7 +14,8 @@ engine = pyttsx3.init()
 import wikipedia_api
 requests.get("https://www.google.com")
 
-newsapi = "3c98a3133d254ab89c8dcc1705c35981"
+load_dotenv()
+newsapi = os.getenv("newsapi")
 
 def speak(text):
     rate = engine.getProperty('rate')
@@ -23,7 +25,7 @@ def speak(text):
 
 def aiProcess(history):
     client = Groq(
-        api_key="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"
+        api_key= os.getenv("api_key")
     )
     completion = client.chat.completions.create(
         model="llama3-70b-8192", 
