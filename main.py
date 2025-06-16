@@ -83,7 +83,7 @@ def processCommand(command):
             speak(f"Playing {song}")
         
         elif "news" in command.lower():
-            r = requests.get("https://newsapi.org/v2/top-headlines?q=india&apiKey=3c98a3133d254ab89c8dcc1705c35981")
+            r = requests.get(f"https://newsapi.org/v2/top-headlines?q=india&apiKey={newsapi}")
             if r.status_code == 200:
                 data = r.json()
                 articles = data.get("articles",[])
@@ -110,8 +110,6 @@ def processCommand(command):
                 speak("Sorry, I couldn't understand. Please repeat.")
             except sr.RequestError:
                 speak("Speech service error. Check your internet.")
-        elif "hariom" in command.lower():
-            speak("ki maa ka bhosda , hariom ki maa ka bhosada , hariom ki maa ka bhosada ")
         elif "time travel" in command.lower():
             speak("Time Travel Machine Activating ! Tie up your seat belts ")
 
