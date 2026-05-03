@@ -4,7 +4,7 @@ LAILA (Layla) is a Python-based, voice-activated virtual assistant created to he
 
 It is designed similarly to Alexa or Google Assistant but runs entirely locally on your machine (optimized for macOS), utilizing powerful AI models for conversational understanding.
 
-## 🌟 Key Features
+## Key Features
 
 - **Wake Word Detection:** LAILA constantly listens for the wake word **"Laila"** to activate and start accepting commands.
 - **AI Conversational Engine:** Powered by the Groq API (using the `llama3-70b-8192` model), LAILA remembers conversation history and provides short, intelligent responses.
@@ -15,7 +15,7 @@ It is designed similarly to Alexa or Google Assistant but runs entirely locally 
 - **News Updates:** Fetches and reads the latest top news headlines in India using NewsAPI.
 - **Wikipedia Search:** Can listen for a specific topic, search Wikipedia, and read a brief summary out loud.
 
-## 🛠️ Technology Stack & Dependencies
+## Technology Stack & Dependencies
 
 - **Python 3**
 - `speech_recognition`: For transcribing microphone audio.
@@ -25,7 +25,7 @@ It is designed similarly to Alexa or Google Assistant but runs entirely locally 
 - `python-dotenv`: To manage secure API keys in a `.env` file.
 - `wikipedia` (custom `wikipedia_api` wrapper): To fetch Wikipedia summaries.
 
-## 📂 Project Structure
+## Project Structure
 
 - `main.py` - The core engine that handles microphone listening, wake word detection, command routing, and text-to-speech.
 - `apps.py` - Contains the mapping dictionary for supported macOS applications.
@@ -34,7 +34,7 @@ It is designed similarly to Alexa or Google Assistant but runs entirely locally 
 - `wikipedia_api.py` - A helper module to fetch Wikipedia summaries while handling disambiguation and errors.
 - `.env` - Stores your API keys securely (excluded from version control).
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 Make sure you have Python installed. You may also need to install `PyAudio` depending on your OS, which is required by `speech_recognition`.
@@ -60,5 +60,5 @@ python main.py
 ```
 You will see console logs telling you it is listening. Say **"Laila"** to wake it up, and then speak your command (e.g., "play [song]", "news", "wikipedia", or just ask a general question!).
 
-## 🛑 How to Stop
+## How to Stop
 To turn the assistant off, just say the command **"switch off"** while it is actively listening for instructions.
